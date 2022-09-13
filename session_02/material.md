@@ -8,6 +8,7 @@
 
 1. What's the same? What's different?
 2. Data Types
+3. printf and scanf
 
 
 ---
@@ -36,7 +37,6 @@
 ## 2. Data Types
 
 - Primitive Types
-	| --- | --- |
 	| java | C | 
 	| --- | --- | 
 	| int | int |
@@ -57,6 +57,80 @@
 	```c
 	char name[] = "George";
 	```
+	**C-strings are null terminated**
+
+
+## 3. printf and scanf
+
+- **printf** - https://man7.org/linux/man-pages/man3/printf.3.html
+	- Syntax: printf(char * format, ...variable_list)
+	- format: A character string composed of zero or more ordinary chracters (not %) and format specifiers (starting with %).
+	- variable_list: A list of values to replace in place of format specifiers according to the given format
+	- Example: 
+	```c
+	int num = 2;
+	printf("%d", num);
+
+	float num2 = 3.1415926;
+	printf("PI = %f", num2); 				// PI = 3.1415926
+	printf("PI (2 decimal places) = %.2f", num2); 		// PI (2 decimal places) = 3.14
+
+	char str[] = "Sheldon Cooper";
+	printf("Name :: %s", str);				// Name :: Sheldon Cooper
+	```
+
+- **scanf** - https://man7.org/linux/man-pages/man3/scanf.3.html
+	- Syntax: scanf(char *format, ...variable_pointers)
+	- format: A character string composed of zero or more ordinary chracters (not %) and format specifiers (starting with %).
+	- variable_pointers: Memory addresses of variables to store the input
+	- Example:
+	```c
+	int num;
+	print("Enter a number : ");
+	scanf("%d", &num);
+
+	char str[10];
+	scanf("%9s", str);
+	printf("Entered string : %s", str);
+	```
+
+- **getchar** - https://man7.org/linux/man-pages/man3/getchar.3p.html
+	- get a byte from standard input stream
+	- Example:
+	```c
+	#include <stdio.h>
+
+	int main () {
+		char c;
+
+		printf("Enter character: ");
+		c = getchar();
+
+		printf("Character entered: ");
+		putchar(c);
+
+		return(0);
+	}
+
+	```
+
+- **putchar** - https://man7.org/linux/man-pages/man3/putchar.3p.html
+	- put a byte on the standard output stream
+	- Example:
+	```c
+	#include <stdio.h>
+
+	int main () {
+		char ch;
+
+		for(ch = 'A' ; ch <= 'Z' ; ch++) {
+			putchar(ch);
+		}
+
+		return(0);
+	}
+	```
+	
 
 ## References
 1. C for Java Programmers (George Ferguson) - https://www.cs.rochester.edu/u/ferguson/csc/c/c-for-java-programmers.pdf
