@@ -8,8 +8,8 @@
 
 1. What's the same? What's different?
 2. Data Types
-3. printf and scanf
-
+3. Input and Output
+4. String utilities
 
 ---
 ## 1. What's the same? What's different?
@@ -60,7 +60,7 @@
 	**C-strings are null terminated**
 
 
-## 3. printf and scanf
+## 3. Input and Output
 
 - **printf** - https://man7.org/linux/man-pages/man3/printf.3.html
 	- Syntax: printf(char * format, ...variable_list)
@@ -131,6 +131,21 @@
 	}
 	```
 	
+## 4. String utilities
+
+- **strlen** - https://man7.org/linux/man-pages/man3/strlen.3.html
+	- calculate the length of a string
+- **strcpy** - https://man7.org/linux/man-pages/man3/strncpy.3.html
+	- copy a string
+
+- Example:
+	```c
+	char str[] = "Hello World";
+	char str2[32];
+	printf("String length = %d", strlen(str));
+	strcpy(str2, str);
+	printf("Copied string : %s", str2);
+	```
 
 ## References
 1. C for Java Programmers (George Ferguson) - https://www.cs.rochester.edu/u/ferguson/csc/c/c-for-java-programmers.pdf
