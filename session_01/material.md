@@ -98,7 +98,7 @@ Example: `CPSC 355 - T05 ...`
 		```
 	- Run the compiled binary.
 		```
-		outfile.out
+		./outfile.out
 		```
 
 ---
