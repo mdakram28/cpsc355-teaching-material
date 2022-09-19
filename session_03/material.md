@@ -11,6 +11,9 @@
 ---
 ## 1. Writing and compiling an assembly program
 
+:q
 
 
 
+---
+## 2. 
