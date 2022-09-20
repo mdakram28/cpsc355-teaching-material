@@ -6,8 +6,10 @@
 
 ## Agenda
 
-1. Compiling an assembly program
-2. Debugging using gdb
+1. Writing and compiling an assembly program
+2. ARM Assembly Example
+3. Debugging using gdb
+4. Useful `gdb` commands
 
 
 ---
@@ -78,7 +80,7 @@ exit:
 ---
 ## 3. Debugging using `gdb`
 
-TO open the program in `gdb`:
+To open the program in `gdb`:
 ```bash
 gdb my_asm.o
 ```
