@@ -8,10 +8,12 @@
 
 1. Writing and compiling an assembly program
 
+
 ---
 ## 1. Writing and compiling an assembly program
 
-:q
+- Save your assembly code with the file extension `.s`
+
 
 
 
