@@ -1,15 +1,15 @@
-# Session 03: Intro to Assembly & GDB
+# Session 03: Control Flow in Assembly
 
-## Date: September 20, 2022
+## Date: September 22:, 2022
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
 ## Agenda
 
 1. Define and Macros
-1. Branch Instruction and Condition Codes
-1. Loops
-1. The if construct
+2. Branch Instruction and Condition Codes
+3. Loops
+4. The if construct
 
 
 
