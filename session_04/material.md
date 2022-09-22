@@ -1,0 +1,109 @@
+# Session 03: Intro to Assembly & GDB
+
+## Date: September 20, 2022
+
+## Email: mohdakram.ansari@ucalgary.ca
+
+## Agenda
+
+1. 
+
+
+
+---
+## 1. Define and Macros
+- The **define** statement can create alternate name for registers.
+	```assembly
+	// This will tell the assembler to replace all x_r to x19
+	define(x_r, x19)
+	```
+- The commands `.macro` and `.endm` allow you to define macros that generate assembly output. For example, this definition specifies a macro sum that puts a sequence of numbers into memory:
+	```assembly
+        .macro  increment reg
+	add	\reg, \reg, 1
+        .endm
+	```
+
+---
+## 2. Branch Instruction and Condition Codes
+
+- Conditional branch statements use the condition falgs to make a decision.
+- These condition flags are set or unset depending on the result of a compare instruction. i.e. `cmp`
+
+Example:
+```assembly
+cmp	x19, x20
+b.eq	some_label
+```
+
+The `cmp` instruction compares the values of two registers or a register and a value and the `b.eq` instruction jumps to `some_label` if the compared values were equal.
+
+Other branching instructions:
+- b.eq (==)
+- b.ne (!=)
+- b.gt (>)
+- b.lt (<)
+- b.ge (>=)
+- b.le (<=)
+
+
+---
+## 3. Loops
+
+- **do-while** loop (post-test loop)
+	- Example:
+	C Code:
+	```c
+	long int x;
+	
+	x = 1;
+	do {
+		// Loop body
+		x++;
+	} while(x <= 10);
+	```
+	Equivalent Assembly Code:
+	```assembly
+		mov	x19, 1
+	top:	// Loop Body
+		// ...
+		
+		add	x19, x19, 1
+		cmp	x19, 10
+		b.le	top
+	```
+
+- **while** loop (pre-test loop)
+	- Example
+	C Code:
+	```c
+	long int x;
+	x = 0;
+	while (x<10) {
+		// Loop body
+		x++;
+	}
+	```
+	Equivalent Assembly Code
+	```assembly
+	define(x_r, x19)
+		
+		mov	x_r, 0
+		b	test
+	top:	// Loop Body
+		// ...
+		
+		add	x_r, x_r, 1
+	test:	cmp	x_r, 10
+		b.lt	top
+		
+		// Loop Finished				
+	```
+
+
+---
+## 4. The if construct
+
+- Formed by branching over the statement body if the condition is not true.
+	Example:
+	```
