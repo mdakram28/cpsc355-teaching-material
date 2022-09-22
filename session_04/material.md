@@ -1,4 +1,4 @@
-# Session 03: Control Flow in Assembly
+# Session 04: Control Flow in Assembly
 
 ## Date: September 22:, 2022
 
