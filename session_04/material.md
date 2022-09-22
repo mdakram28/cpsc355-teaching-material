@@ -6,7 +6,10 @@
 
 ## Agenda
 
-1. 
+1. Define and Macros
+1. Branch Instruction and Condition Codes
+1. Loops
+1. The if construct
 
 
 
@@ -106,4 +109,62 @@ Other branching instructions:
 
 - Formed by branching over the statement body if the condition is not true.
 	Example:
+	
+	```c
+	if (a > b) {
+	  c = a+b;
+	  d = c+5;
+	}
 	```
+	
+	Equivalent Assembly Code:
+	
+	```assembly
+	define(a_r, x19)
+	define(b_r, x19)
+	define(c_r, x19)
+	define(d_r, x19)
+	
+		...
+		cmp		a_r, b_r	// test
+		b.le	next			// Logical compliment
+		add		c_r, a_r, b_r
+		add		d_r, c_r, 5
+	next:
+		// Statements after if condition
+	```
+
+- The **if-else** construct is formed by brnaching to the else part if the condition is not true.
+
+  Example C Code:
+
+  ```c
+  if (a>b) {
+    a = a+b;
+  } else {
+    a = a-b;
+  }
+  ```
+
+  Equivalent Assembly Code:
+
+  ```assembly
+  define(a_r, x19)
+  define(b_r, x20)
+  
+  	cmp		a_r, b_r
+  	b.le	else
+  	
+  	add		a_r, a_r, b_r
+  	b			next
+  	
+  else:
+  	sub		a_r, a_r, b_r
+  	
+  next:
+  	// Statements after the if-else construct
+  ```
+
+  
+
+  
