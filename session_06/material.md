@@ -87,7 +87,7 @@ mvn		x0, x19, x20
 
 **Arithmetic Shift** Preserves the sign bit (Leftmost bit). i.e. it does not move the leftmost bit
 
-### ARMv8 Shit instruction
+### ARMv8 Shift instruction
 
 - Logical Shift Left: LSL
 - Logical Shift Right: LSR
