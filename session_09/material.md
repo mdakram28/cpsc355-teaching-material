@@ -97,11 +97,11 @@ main:
 	
 	// int a = 10;
 	mov 	w19, 10					// Store 10 temporarily in w19
-	str		w19, [sp, a_s]			// Load 10 at (sp + 16)
+	str		w19, [x29, a_s]			// Load 10 at (sp + 16)
 	
 	// printf("%d", a);
 	ldr		x0, =fmt				// First arg = address of format string
-	ldr		w1, [sp, a_s]			// Second arg = value stored at (sp + 16)
+	ldr		w1, [x29, a_s]			// Second arg = value stored at (sp + 16)
 	bl		printf					// Call printf
 	
 exit:
