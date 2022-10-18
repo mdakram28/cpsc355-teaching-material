@@ -1,4 +1,4 @@
-# Session 11: Stack Memory
+# Session 11: Stack Memory - Arrays
 
 ## Date: October 18, 2022
 
