@@ -1,6 +1,6 @@
-# Session 09: Stack Memory
+# Session 11: Stack Memory
 
-## Date: October 11, 2022
+## Date: October 18, 2022
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
