@@ -8,7 +8,7 @@
 
 1. Allocating arrays in the stack
 
-1. Loading & Storign Array Items
+1. Loading & Storing Array Items
 
 
 
