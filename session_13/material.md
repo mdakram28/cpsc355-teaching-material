@@ -63,7 +63,8 @@ define(j_r, w22)
 		alloc = -(16 + arr_size) & -16
 		arr_s = 16
 
-main:	stp		x29, x30, [sp, alloc]!
+main:
+		stp		x29, x30, [sp, alloc]!
 		mov		x29, sp
 		
 		...
