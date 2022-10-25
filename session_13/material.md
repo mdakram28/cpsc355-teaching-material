@@ -8,7 +8,8 @@
 
 1. Multidimensional Arrays
 2. Data Structures
-
+3. Subroutines
+4. Open Subroutines
 
 ----
 
@@ -101,4 +102,76 @@ Offsets:     a:0             b:4 c:5
 
 ```
 
+```assembly
 
+// Offsets
+rec_a = 0
+rec_b = 4
+rec_c = 5
+
+// Access fields of struct pointed by x19
+ldr	w20, [x19, rec_a]
+ldsb	w21, [x19, rec_b]
+ldrsq	w22, [x19, rec_c]
+```
+
+---
+
+## 3. Subroutines
+
+Subroutines allow us to repeat a set of instructions using different arguments
+
+**Open Subroutine** : Code is inserted (duplicated) wherever the subroutine is invoked.
+
+
+**Closed Subroutines** : Machine code is not copied, the cpu jumps to the single place where the code is in the RAM and returns back to the calling place once the subroutine is over.
+
+
+## 4. Open Subroutines
+
+Open subroutines are usually implemented using a macros (M4). 
+
+M4 macros are created using define and arguments are accessed within the macro using $1, $2 ...
+
+> Note: Use `' instead of '' or "" to create multiline macros
+
+Example:
+```assembly
+// Macro to increment a register by 1
+
+define(increment, `
+	add	$1, $1, 1
+')
+
+
+	...
+	increment(x19)		// Calling macro
+	
+	// Expands to
+	add	x19, x19, 1
+	...
+```
+
+Example:
+```assembly
+// Macro to print array of integers
+
+fmt_int32:	.string	"%d \n"
+
+define(print_int32, `
+	ldr	x0, =fmt_int32
+	mov	w1, $1
+	bl	printf
+')
+
+	...
+	print_int32(w19)
+
+	// Expands to
+	ldr	x0, =fmt_int32
+	mov	w1, w19
+	bl	printf
+	
+	...
+
+```
