@@ -6,17 +6,13 @@
 
 ## Agenda
 
-1. Data Structures
-
+1. Multidimensional Arrays
+2. Data Structures
 
 
 ----
 
-## 1. Data Structures
-
-
-
-#### Multidimensional Arrays
+## 1. Multidimensional Arrays
 
 Most languages use row major order when storing arrays in RAM.
 
@@ -73,17 +69,42 @@ main:
 	add	offset_r, offset_r, j_r				// offset = (i * NCOLS) + j
 	
 	mov	w24, 13						
-	str	w24, [arr_base_r, offset_r, SXTW 2]		// Store at (base + offset*4)
-	...
-	
-	mov	x0, 0
-	ldp	x29, x30, [sp], -alloc
-	ret
+	str	w24, [arr_base_r, offset_r, https://github.com/mdakram28/cpsc355/blob/main/session_13/images/img1.png
 		
 		
 ```
 
+---
 
+## 2. Data Structures
 
+Contains fields of different types. Each field is accessed using an offset from the base address of the struct.
+
+Example:
+
+```c
+struct rec {
+	int a;
+	char b;
+	short c;
+}
+
+---+---+---+---+---+---+---+---+---+---+---+---+---
+   |   |   | a | a | a | a | b | c | c |   |   |   
+---+---+---+---+---+---+---+---+---+---+---+---+---
+                             ^
+             
+	     Offset rec_a = 0
+┌──────────────────────┐
+│                      │
+│                      │
+│   │                  │
+│   │                  │
+│   │▼                 │
+│   └──►               │
+│                      │
+│                      │
+└──────────────────────┘
+```
 
 
