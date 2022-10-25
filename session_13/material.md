@@ -70,7 +70,7 @@ main:
 	add	offset_r, offset_r, j_r				// offset = (i * NCOLS) + j
 	
 	mov	w24, 13						
-	str	w24, [arr_base_r, offset_r, https://github.com/mdakram28/cpsc355/blob/main/session_13/images/img1.png
+	str	w24, [arr_base_r, offset_r, SXTW 2]
 		
 		
 ```
