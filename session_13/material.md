@@ -32,7 +32,7 @@ Where NCOLS is the number of columns per row in the matrix. It's easy to see thi
 
 `int arr[2][3]` (Multidimensional array with 2 rows and 3 columns)
 
-![image-20221024180426609](/home/akram/ucalgary/teaching/cpsc355/session_13/images/img1.png)
+![image-20221024180426609](./images/img1.png)
 
 
 
