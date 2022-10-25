@@ -57,7 +57,29 @@ define(i_r, w21)
 define(j_r, w22)
 
 ...
-	
+		rows = 2
+		cols = 3
+		arr_size = rows * cols * 4
+		alloc = -(16 + arr_size) & -16
+		arr_s = 16
+
+main:	stp		x29, x30, [sp, alloc]!
+		mov		x29, sp
+		
+		...
+		add		arr_base_r, x29, arr_s					// Caculate arr base address
+		mul		offset_r, i_r, cols						// offset = (i * NCOLS)
+		add		offset_r, offset_r, j_r					// offset = (i * NCOLS) + j
+		
+		mov		w24, 13						
+		str		w24, [arr_base_r, offset_r, SXTW 2]		// Store at (base + offset*4)
+		...
+		
+		mov		x0, 0
+		ldp		x29, x30, [sp], -alloc
+		ret
+		
+		
 ```
 
 
