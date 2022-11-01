@@ -1,4 +1,4 @@
-str_fmt:.string "Color( r=%d, g=%d, b=%d )"
+str_fmt:.string "Color( r=%d, g=%d, b=%d )\n"
 
 	.global main
 	.balign 4

@@ -40,14 +40,14 @@ struct color black() {
 int main() {
         struct color col;
         col = black();
-        printf("Color( r=%d, g=%d, b=%d )", col.r, col.g, col.b)
+        printf("Color( r=%d, g=%d, b=%d )\n", col.r, col.g, col.b)
         return 0;
 }
 ```
 
 Equivalent Assembly Code:
 ```asssembly
-str_fmt:.string "Color( r=%d, g=%d, b=%d )"
+str_fmt:.string "Color( r=%d, g=%d, b=%d )\n"
 
 	.global main
 	.balign 4
