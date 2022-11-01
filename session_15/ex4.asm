@@ -29,44 +29,48 @@ str_u3_pass:    .string "insecurepass"
         u3_s = 16 + database_size + user_size*2
 main:	stp	x29, x30, [sp, main_alloc]!
 	mov	x29, sp
-	
-        add     db_base_r, x29, db_s
-	ldr     wzr, [db_base_r, database_numusers_s]
-        
-        add     user_base_r, x29, u1_s
-        ldr     x19, =str_u1_name
-        str     x19, [user_base_r, user_username_s]
-        ldr     x19, =str_u1_pass
-        str     x19, [user_base_r, user_password_s]
-        add     user_base_r, x29, u2_s
-        ldr     x19, =str_u2_name
-        str     x19, [user_base_r, user_username_s]
-        ldr     x19, =str_u2_pass
-        str     x19, [user_base_r, user_password_s]
-        add     user_base_r, x29, u3_s
-        ldr     x19, =str_u3_name
-        str     x19, [user_base_r, user_username_s]
-        ldr     x19, =str_u3_pass
-        str     x19, [user_base_r, user_password_s]
 
-        mov     x0, db_base_r
-        add     x1, x29, u1_s
-        bl      adduser
-        mov     x0, db_base_r
-        add     x1, x29, u2_s
-        bl      adduser
-        mov     x0, db_base_r
-        add     x1, x29, u3_s
-        bl      adduser
+        ldr     x0, =str_u1_name
+        bl      printf
 	
+        @ add     db_base_r, x29, db_s
+	@ ldr     wzr, [db_base_r, database_numusers_s]
+        
+        @ add     user_base_r, x29, u1_s
+        @ ldr     x19, =str_u1_name
+        @ str     x19, [user_base_r, user_username_s]
+        @ ldr     x19, =str_u1_pass
+        @ str     x19, [user_base_r, user_password_s]
+        @ add     user_base_r, x29, u2_s
+        @ ldr     x19, =str_u2_name
+        @ str     x19, [user_base_r, user_username_s]
+        @ ldr     x19, =str_u2_pass
+        @ str     x19, [user_base_r, user_password_s]
+        @ add     user_base_r, x29, u3_s
+        @ ldr     x19, =str_u3_name
+        @ str     x19, [user_base_r, user_username_s]
+        @ ldr     x19, =str_u3_pass
+        @ str     x19, [user_base_r, user_password_s]
+
+        @ mov     x0, db_base_r
+        @ add     x1, x29, u1_s
+        @ bl      adduser
+        @ mov     x0, db_base_r
+        @ add     x1, x29, u2_s
+        @ bl      adduser
+        @ mov     x0, db_base_r
+        @ add     x1, x29, u3_s
+        @ bl      adduser
+	
+        @ ldr     x0, =str_fmt
+        @ ldr     x1, [db_base_r, user_username_s]
+        @ ldr     x2, [db_base_r, user_password_s]
+        @ bl      printf
+        
         mov	x0, 0
 	ldp	x29, x30, [sp], -main_alloc
 	ret
 
-        ldr     x0, =str_fmt
-        ldr     x1, [db_base_r, user_username_s]
-        ldr     x2, [db_base_r, user_password_s]
-        bl      printf
 
 
         define(users_base_r, x21)
