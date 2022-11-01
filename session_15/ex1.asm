@@ -34,17 +34,17 @@ black:	stp	x29, x30, [sp, black_alloc]!
         // Calculate local struct base
         add     newcol_base_r, x29, newcol_s
         
-        str     xzr, [newcol_base_r, color_r_s]
-        str     xzr, [newcol_base_r, color_g_s]
-        str     xzr, [newcol_base_r, color_b_s]
+        str     wzr, [newcol_base_r, color_r_s]
+        str     wzr, [newcol_base_r, color_g_s]
+        str     wzr, [newcol_base_r, color_b_s]
 
         // Copy local struct to struct at [x8]
-        ldr     x19, [newcol_base_r, color_r_s]
-        str     x19, [x8, color_r_s]
-        ldr     x19, [newcol_base_r, color_g_s]
-        str     x19, [x8, color_g_s]
-        ldr     x19, [newcol_base_r, color_b_s]
-        str     x19, [x8, color_b_s]
+        ldr     w19, [newcol_base_r, color_r_s]
+        str     w19, [x8, color_r_s]
+        ldr     w19, [newcol_base_r, color_g_s]
+        str     w19, [x8, color_g_s]
+        ldr     w19, [newcol_base_r, color_b_s]
+        str     w19, [x8, color_b_s]
 	
         ldp	x29, x30, [sp], -black_alloc
 	ret
