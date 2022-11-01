@@ -1,3 +1,4 @@
+str_fmt:.string "Color( r=%d, g=%d, b=%d )"
 
 	.global main
 	.balign 4
@@ -9,7 +10,7 @@
         color_b_s = 8
 
 
-        
+        define(col_base_r, x21)
         main_alloc = -(16 + color_size) & -16
         col_s = 16
 main:	stp	x29, x30, [sp, main_alloc]!
@@ -18,6 +19,13 @@ main:	stp	x29, x30, [sp, main_alloc]!
         // Store address of col in x8
 	add     x8, x29, col_s
         bl      black
+
+        add     col_base_r, x29, col_s
+        ldr     x0, =str_fmt
+        ldr     w1, [col_base_r, color_r_s]
+        ldr     w2, [col_base_r, color_g_s]
+        ldr     w3, [col_base_r, color_b_s]
+        bl      printf
 	
         mov	x0, 0
 	ldp	x29, x30, [sp], -main_alloc
