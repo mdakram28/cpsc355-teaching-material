@@ -74,14 +74,13 @@ main:	stp	x29, x30, [sp, main_alloc]!
 
 
         define(users_base_r, x21)
-        define(users_index_r, x22)
+        define(users_index_r, x24)
         define(users_offset_r, x23)
-        define(user_base_r, x22)
+        define(user_base_r, x25)
         adduser_alloc = -(16) & -16
 adduser:stp	x29, x30, [sp, adduser_alloc]!
 	mov	x29, sp
 	
-        // Compute newcol r,g,b
         add     users_base_r, x0, database_users_s
         add     users_index_r, x0, database_numusers_s
         mul     users_offset_r, users_index_r, user_size
