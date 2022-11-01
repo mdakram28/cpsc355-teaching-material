@@ -19,7 +19,8 @@ define(copy_color, `
         str     w19, [$2, color_b_s]
 ')
 
-
+	
+	define(col_base_r, x22)
         define(lightcol_base_r, x21)
         main_alloc = -(16 + color_size*2) & -16
         col_s = 16
@@ -27,12 +28,16 @@ define(copy_color, `
 main:	stp	x29, x30, [sp, main_alloc]!
 	mov	x29, sp
 	
-        // Store address of col in x8
-	add     x8, x29, col_s
-        bl      black
+	add	col_base_r, x29, col_s
+	mov	w19, 100
+	str	w19, [col_base_r, color_r_s]
+	mov	w19, 200
+	str	w19, [col_base_r, color_g_s]
+	mov	w19, 300
+	str	w19, [col_base_r, color_b_s]
 
         add     x0, x29, col_s
-        mov     w1, 10
+        mov     w1, 5
         add     x8, x29, lightcol_s
         bl      lighten
 
@@ -48,27 +53,6 @@ main:	stp	x29, x30, [sp, main_alloc]!
 	ret
 
 
-
-
-
-        define(newcol_base_r, x21)
-        black_alloc = -(16 + color_size) & -16
-        newcol_s = 16
-black:	stp	x29, x30, [sp, black_alloc]!
-	mov	x29, sp
-	
-        // Calculate local struct base
-        add     newcol_base_r, x29, newcol_s
-        
-        str     wzr, [newcol_base_r, color_r_s]
-        str     wzr, [newcol_base_r, color_g_s]
-        str     wzr, [newcol_base_r, color_b_s]
-
-        // Copy local struct to struct at [x8]
-        copy_color(newcol_base_r, x8)
-	
-        ldp	x29, x30, [sp], -black_alloc
-	ret
 
 
 

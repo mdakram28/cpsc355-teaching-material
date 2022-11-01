@@ -1,16 +1,10 @@
+#include <stdio.h>
+
 struct color {
         int r;
         int g;
         int b;
-}
-
-struct color black() {
-        struct color newcol;
-        newcol.r = 0;
-        newcol.g = 0;
-        newcol.b = 0;
-        return newcol;
-}
+};
 
 struct color lighten(struct color origcol, int factor) {
         struct color newcol;
@@ -21,9 +15,11 @@ struct color lighten(struct color origcol, int factor) {
 }
 
 int main() {
-        struct color col, lighcol;
-        col = black();
-        lightcol = lighten(col, 10)
-        printf("Color( r=%d, g=%d, b=%d )\n", lightcol.r, lightcol.g, lightcol.b)
+        struct color col, lightcol;
+	col.r = 100;
+	col.g = 200;
+	col.b = 300;
+        lightcol = lighten(col, 5);
+        printf("Color( r=%d, g=%d, b=%d )\n", lightcol.r, lightcol.g, lightcol.b);
         return 0;
 }
