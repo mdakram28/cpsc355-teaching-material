@@ -6,8 +6,8 @@
 
 ## Agenda
 
-1. Passing Struct Value
-2. Passing Struct Pointer
+1. Passing/Returning Struct Value
+2. Passing/Returning Struct Pointer
 
 ----
 
@@ -106,6 +106,19 @@ black:	stp	x29, x30, [sp, black_alloc]!
         ldp	x29, x30, [sp], -black_alloc
 	ret
 ```
+**Passing struct value**
 
+Passing struct by value is done using the same method as returning struct by value.
+The address of the local variable to pass is stored in x0-x7. The subroutine then copies the struct to its stack from x0-x7.
 
 **Example 2**: ex2.c, ex2.asm - Program to lighten color passed as value and return new color
+
+---
+
+## 2. Passing/Returning Struct Pointer
+
+Passing by value is not very efficient, since the whole struct is copied before passing or returning. But it also makes sure that the original struct is not modified.
+
+But sometimes, we might need to modify the original struct passed to the subroutine or we might neeed to just read the struct. In such cases, we do not need to allocate the struct in the subroutine's stack frame. Instead, we can pass the base address of the struct (pointer) and directly modify the memory at the address passed.
+
+Example 3: ex3.c, ex3.asm - Modify example 2 lighten function to modify the original color passed instead of creating a new color.
