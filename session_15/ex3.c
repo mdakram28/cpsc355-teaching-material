@@ -7,9 +7,9 @@ struct color {
 };
 
 void lighten(struct color *origcol, int factor) {
-        origcol.r = origcol.r * factor;
-        origcol.g = origcol.g * factor;
-        origcol.b = origcol.b * factor;
+        origcol.r = origcol->r * factor;
+        origcol.g = origcol->g * factor;
+        origcol.b = origcol->b * factor;
 }
 
 int main() {
