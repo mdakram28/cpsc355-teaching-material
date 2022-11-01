@@ -24,5 +24,6 @@ int main() {
         struct color col, lighcol;
         col = black();
         lightcol = lighten(col, 10)
+        printf("Color( r=%d, g=%d, b=%d )", lightcol.r, lightcol.g, lightcol.b)
         return 0;
 }

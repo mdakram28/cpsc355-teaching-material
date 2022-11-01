@@ -1,3 +1,4 @@
+str_fmt:.string "Color( r=%d, g=%d, b=%d )"
 
 	.global main
 	.balign 4
@@ -19,7 +20,7 @@ define(copy_color, `
 ')
 
 
-        
+        define(lightcol_base_r, x21)
         main_alloc = -(16 + color_size*2) & -16
         col_s = 16
         lightcol_s = 16 + color_size
@@ -34,10 +35,19 @@ main:	stp	x29, x30, [sp, main_alloc]!
         mov     w1, 10
         add     x8, x29, lightcol_s
         bl      lighten
+
+        add     lightcol_base_r, x29, lightcol_s
+        ldr     x0, =str_fmt
+        ldr     w1, [lightcol_base_r, color_r_s]
+        ldr     w2, [lightcol_base_r, color_g_s]
+        ldr     w3, [lightcol_base_r, color_b_s]
+        bl      printf
 	
         mov	x0, 0
 	ldp	x29, x30, [sp], -main_alloc
 	ret
+
+
 
 
 
