@@ -1,6 +1,6 @@
 # Session 17: External Pointer Arrays
 
-## Date: November 17, 2022
+## Date: November 15, 2022
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
