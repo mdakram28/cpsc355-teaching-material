@@ -138,10 +138,10 @@ num2 = 11
 1. .text section are meant to store (constant) string literals and instructions
 2. .data and .bss sections are meant to store global variables
 3. Pre-Initialized Data can be stores in these sections using these pseudo-ops:
-        - `.dword` : Double Word (8 bytes)
-        - `.word`  : Word (4 bytes)
-        - `.hword` : Half Word (2 bytes)
-        - `.byte` : byte (1 byte)
+	- `.dword` : Double Word (8 bytes)
+	- `.word`  : Word (4 bytes)
+	- `.hword` : Half Word (2 bytes)
+	- `.byte` : byte (1 byte)
 4. Uninitialized space can be allocated using `.skip` pseudo-op followed by the number of bytes. Use this inside .bss section.
 
 Example:
@@ -274,12 +274,12 @@ This allows us to:
 ![Build Process](https://courses.engr.illinois.edu/cs232/sp2009/lectures/Examples/lecture6/multi_assemble.jpg)
 
 1. Assembling
-        - Each code file is compiled into object files individually.
-        - For C files, use the command `gcc c_code.c -o c_code.o -c`
-        - For assembly files, use the command `gcc asm_code.s -o asm_code.o -c`
+	- Each code file is compiled into object files individually.
+	- For C files, use the command `gcc c_code.c -o c_code.o -c`
+	- For assembly files, use the command `gcc asm_code.s -o asm_code.o -c`
 2. Linking
-        - All the assembled object files are compiled into a single executable while also linking the required library code.
-        - Use the command `gcc c_code.o asm_code.o -o exec` for linking `c_code.o` and `asm_code.o`
+	- All the assembled object files are compiled into a single executable while also linking the required library code.
+	- Use the command `gcc c_code.o asm_code.o -o exec` for linking `c_code.o` and `asm_code.o`
 
 ### Calling assembly code from c
 
