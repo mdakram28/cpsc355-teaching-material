@@ -188,9 +188,9 @@ exit:	        mov	x0, 0
 Write a calculator program in assembly that can either add or subtract two numbers.
 The input is given through the command line arguments. as follows:
 
-argument 1 : First number
-argument 2 : "+" or "-"
-argument 3 : Second number
+1. argument 1 : First number
+2. argument 2 : "+" or "-"
+3. argument 3 : Second number
 
 ```
 $ ./my_calculator   14 + 25
