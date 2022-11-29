@@ -184,7 +184,7 @@ open_ok:
 
                 // Print bytes written
                 ldr     x0, =str_written
-                mov     w1, bytes_written_r
+                mov     w1, bytes_write_r
                 bl      printf
                 
 
