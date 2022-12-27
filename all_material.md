@@ -1,28 +1,25 @@
-# Session 01: Introduction & Setup
+# Introduction
+### Who Am I? - Akram Ansari (https://mdakram.com/)
 
-## 01.1. Introduction
-
-This article is adapted from the tutorial material for a Computer Science Course - CPSC355 and is meant to teach the basics of assembly, c and the inner working of a computer application.
+I have been teaching ARM assembly to university students. This article is adapted from the tutorial material for a Computer Science Course - CPSC355 that I taught in 2022 and is meant to teach the basics of assembly, c and the inner working of a computer application.
 The article will focus on understanding how a computer program is written and how that program is understood and executed by the processor. We will write assemble for the 64-bit ARMv8 architecture CPU. We will also understand what the binary code of a program written in C looks like. We will run the program in a Linux OS.
 
----
-## 01.2. Setting up your ssh workspace
+The source code for the examples and exercise solutions can be found in the repo : https://github.com/mdakram28/cpsc355.
 
-- Make sure you have your CPSC account set up. 
-	- IT Account Management Portal [https://password.ucalgary.ca/](https://password.ucalgary.ca/)
-- Make sure you have a ssh client installed on your computer.
-	- Windows: [Putty Installation Instructions](https://www.ssh.com/academy/ssh/putty/windows/install)
-	- linux/macOS: OpenSSH (Pre-Installed)
-- Make sure you are using the university remote access VON if you are outside the unviersity network.
-[Remote Access Instructions](https://ucalgary.service-now.com/it?id=kb_article&sys_id=52a169d6dbe5bc506ad32637059619cd)
-- Connect to CPSC ARM server
-	- Hostname: **arm.cpsc.ucalgary.ca**
-	- Username: **Your_CPSC_Username**
-	- Password: **Your_CPSC_Password**
-	- On Windows: Open Putty > Enter Hostname: (john.sturgis@arm.cpsc.ucalgary.ca) > Open > Enter Password when prompted
+### How to follow?
+Try to run the code given as examples and also attempt to solve the exercises. The sessions are meant to be covered in 1 day each and would take a maximum of 30 minutes per session. It also has 6 break days included. Cover the material at the suggested pace to get maximum retention of the concepts.
+
+
+# Session 01: Setup
+
+## 01.1. Setting up your workspace
+
+- You need to have a computer running any flavour of linux runnning.
+- Install necessary dependencies to run arm binaries on an x86 system.
+https://azeria-labs.com/arm-on-x86-qemu-user/
 
 ---
-## 01.3. Intro to the linux shell and VIM
+## 01.2. Intro to the linux shell and VIM
 
 - Basic Shell Commands
 	```bash
@@ -65,7 +62,7 @@ The article will focus on understanding how a computer program is written and ho
 	- **Insert mode:** Whenever we try to open vim editor, it will go to command mode by default. To write the contents in the file, we must go to insert mode. Press ‘I’ to go to insert mode. If we want to go back to command mode, press the [Esc] key.
 
 ---
-## 01.4. Compiling Your first C program
+## 01.3. Compiling Your first C program
 
 - Compiling a C program
 	- Write your C program in a file with the extention `.c` (Not a requirement).
@@ -80,7 +77,7 @@ The article will focus on understanding how a computer program is written and ho
 
 ---
 
-## 01.5. Hello World in C
+## 01.4. Hello World in C
 ```c
 #include <stdio.h>
 
@@ -103,6 +100,16 @@ $$
 
 **Solution**
 ```c
+#include <stdio.h>
+
+int main() {
+	float temp_f, temp_c;
+	printf("Enter temperature in fahrenheit: ");
+	scanf("%f", &temp_f);
+	temp_c = ((temp_f - 32) * 5) / 9;
+	printf("Temperature in Celsius: %f\n", temp_c);
+	return 0;
+}
 
 ```
 
