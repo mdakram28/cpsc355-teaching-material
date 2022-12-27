@@ -2,7 +2,8 @@
 
 ## 01.1. Introduction
 
-
+This article is adapted from the tutorial material for a Computer Science Course - CPSC355 and is meant to teach the basics of assembly, c and the inner working of a computer application.
+The article will focus on understanding how a computer program is written and how that program is understood and executed by the processor. We will write assemble for the 64-bit ARMv8 architecture CPU. We will also understand what the binary code of a program written in C looks like. We will run the program in a Linux OS.
 
 ---
 ## 01.2. Setting up your ssh workspace
