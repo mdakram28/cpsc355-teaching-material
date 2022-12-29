@@ -987,7 +987,7 @@ Where NCOLS is the number of columns per row in the matrix. It's easy to see thi
 
 `int arr[2][3]` (Multidimensional array with 2 rows and 3 columns)
 
-![image-20221024180426609](./session_13/images/img1.png)
+![image-20221024180426609](https://github.com/mdakram28/cpsc355/raw/main/session_13/images/img1.png)
 
 
 
@@ -2573,7 +2573,7 @@ Write a program to read an int (4 bytes) from a binary file - `input.bin`
 
 ### Figure: Arrangement of floating-point values
 
-![Arrangement](./session_22/assets/arrangement.svg)
+![Arrangement](https://github.com/mdakram28/cpsc355/raw/main/session_22/assets/arrangement.svg)
 
 
 
