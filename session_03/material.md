@@ -1,6 +1,6 @@
 # Session 03: Intro to Assembly & GDB
 
-## Date: September 20, 2022
+## Date: January 24, 2023
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
@@ -35,40 +35,40 @@ Proram to print hello world 10 times.
 ```assembly
 # AARCH64 assembly tutorial example 01
 
-		// Tell GCC to use printf function from outside this code
+	// Tell GCC to use printf function from outside this code
         .extern printf
 fmt:
-        .string "x19 = %d Hello World!\n"			// String to send to printf
+        .string "x19 = %d Hello World!\n"		// String to send to printf
 
 
-		// Main function
-        .balign 4						// Align instructions to word
+	// Main function
+        .balign 4					// Align instructions to word
         .global main					// Make main function visible to outside this code
 main:
-        stp     x29, x30, [sp, -16]!    // Save FP and LR to stack
+        stp     x29, x30, [sp, -16]!    		// Save FP and LR to stack
         mov     x29, sp					// Update FP to current SP
 		
-		// Initialize loop counter
+	// Initialize loop counter
         mov     x19, #1;				// x19 starts from 1
-loop_top:								// Loop starts here
+loop_top:						// Loop starts here
         cmp     x19, #10				// Compare x19 to 10
         b.gt    loop_end				// If x19 > 10 then goto loop_end
 
-		// Call printf external function
+	// Call printf external function
         ldr     x0, =fmt				// First argument is the pointer to format string
         mov     x1, x19					// Second argument is the integer to replace "%d"
         bl      printf					// Call printf
 
-        add     x19, x19, #1			// Increment loop counter
+        add     x19, x19, #1				// Increment loop counter
         b       loop_top				// Repeat loop
 loop_end:
         b       exit					// Goto Exit (Not needed here)
 
 exit:
         // return 0
-        mov x0, 0						// Return value 0 is stored in x0
-        ldp x29, x30, [sp], 16			// Restore FP and LR from stack pointer
-        ret								// Go back to the callee
+        mov x0, 0					// Return value 0 is stored in x0
+        ldp x29, x30, [sp], 16				// Restore FP and LR from stack pointer
+        ret						// Go back to the callee
 
 
 ```
