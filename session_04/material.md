@@ -1,6 +1,6 @@
 # Session 04: Control Flow in Assembly
 
-## Date: September 22:, 2022
+## Date: January 26, 2023
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
