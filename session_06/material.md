@@ -1,6 +1,6 @@
 # Session 06: Bitwise and Shift Instructions
 
-## Date: September 29, 2022
+## Date: February 2, 2022
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
@@ -77,7 +77,7 @@ mvn		x0, x19, x20
 	    0101 << 1
 	  = 1010
 	```
-- Right Shift]
+- Right Shift
 	```
 	    0101 >> 1
 	  = 0010
