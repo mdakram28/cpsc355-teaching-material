@@ -1,6 +1,6 @@
 # Session 07: Bitwise and Shift Instructions (Recap)
 
-## Date: October 04, 2022
+## Date: February 7, 2022
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
