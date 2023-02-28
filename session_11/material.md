@@ -156,7 +156,7 @@ ldr		w21, [base_r, index_r, SXTW 2]
 
 ### Exercise
 
-Write a program in arm assembly to find the maximum item of an array. The array is initialised using the rand function.
+Write a program in arm assembly to fill the items of an array with random value between 0-255 and then print the initialized array. The array is initialised using the rand function.
 
 C Code:
 
@@ -169,20 +169,14 @@ C Code:
 int main() {
     int arr[ARR_ITEMS];
     int i;
-    int max;
     
     for (i=0; i<ARR_ITEMS; i++) {
         arr[i] = rand() & 0xFF;
     }
     
-    max = arr[0];
     for (i=0; i<ARR_ITEMS; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
+        printf("arr[i] = %d\n", arr[i]);
     }
-    
-    printf("Maximum item is %d\n", max);
     
     return 0;
 }
