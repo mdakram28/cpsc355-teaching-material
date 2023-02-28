@@ -1,6 +1,6 @@
 # Session 11: Stack Memory - Arrays
 
-## Date: October 18, 2022
+## Date: February 28, 2022
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
@@ -78,20 +78,20 @@ arr_items = 10
 var_size = 4
 alloc = -(16 + var_size + arr_items*4) & -16
 
-		.global main
-		.balign 4
-main:	stp		x29, x30, [sp, alloc]!
-		mov		x29, sp
+	.global main
+	.balign 4
+main:	stp	x29, x30, [sp, alloc]!
+	mov	x29, sp
 		
-        mov		w19, 3456
-        str		w19, [x29, 16]
+        mov	w19, 3456
+        str	w19, [x29, 16]
         
-		mov		w19, 1234
-		str		w19, [x29, 20]
+	mov	w19, 1234
+	str	w19, [x29, 20]
 		
-exit:	mov		x0, 0
-		ldp		x29, x30, [sp], -alloc
-		ret
+exit:	mov	x0, 0
+	ldp	x29, x30, [sp], -alloc
+	ret
 ```
 
 
