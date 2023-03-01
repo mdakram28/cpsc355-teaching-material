@@ -1,6 +1,6 @@
 # Session 11: Stack Memory - Arrays
 
-## Date: October 18, 2022
+## Date: February 28, 2022
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
@@ -78,20 +78,20 @@ arr_items = 10
 var_size = 4
 alloc = -(16 + var_size + arr_items*4) & -16
 
-		.global main
-		.balign 4
-main:	stp		x29, x30, [sp, alloc]!
-		mov		x29, sp
+	.global main
+	.balign 4
+main:	stp	x29, x30, [sp, alloc]!
+	mov	x29, sp
 		
-        mov		w19, 3456
-        str		w19, [x29, 16]
+        mov	w19, 3456
+        str	w19, [x29, 16]
         
-		mov		w19, 1234
-		str		w19, [x29, 20]
+	mov	w19, 1234
+	str	w19, [x29, 20]
 		
-exit:	mov		x0, 0
-		ldp		x29, x30, [sp], -alloc
-		ret
+exit:	mov	x0, 0
+	ldp	x29, x30, [sp], -alloc
+	ret
 ```
 
 
@@ -156,7 +156,7 @@ ldr		w21, [base_r, index_r, SXTW 2]
 
 ### Exercise
 
-Write a program in arm assembly to find the maximum item of an array. The array is initialised using the rand function.
+Write a program in arm assembly to fill the items of an array with random value between 0-255 and then print the initialized array. The array is initialised using the rand function.
 
 C Code:
 
@@ -169,20 +169,14 @@ C Code:
 int main() {
     int arr[ARR_ITEMS];
     int i;
-    int max;
     
     for (i=0; i<ARR_ITEMS; i++) {
         arr[i] = rand() & 0xFF;
     }
     
-    max = arr[0];
     for (i=0; i<ARR_ITEMS; i++) {
-        if (arr[i] > max) {
-            max = arr[i];
-        }
+        printf("arr[i] = %d\n", arr[i]);
     }
-    
-    printf("Maximum item is %d\n", max);
     
     return 0;
 }

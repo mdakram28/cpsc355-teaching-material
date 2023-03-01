@@ -1,6 +1,6 @@
 # Session 02: C for Java Developers
 
-## Date: September 15, 2022
+## Date: January 19, 2023
 
 ## Email: mohdakram.ansari@ucalgary.ca
 

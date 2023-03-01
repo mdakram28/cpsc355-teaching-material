@@ -1,6 +1,6 @@
 # Session 01: Introduction & Setup
 
-## Date: September 13, 2022
+## Date: January 17, 2022
 
 ## By: Mohd Akram Ansari - https://mdakram.com
 
@@ -34,15 +34,14 @@ Example: `CPSC 355 - T05 ...`
 - Make sure you have your CPSC account set up. 
 	- IT Account Management Portal [https://password.ucalgary.ca/](https://password.ucalgary.ca/)
 - Make sure you have a ssh client installed on your computer.
-	- Windows: [Putty Installation Instructions](https://www.ssh.com/academy/ssh/putty/windows/install)
-	- linux/macOS: OpenSSH (Pre-Installed)
+	- OpenSSH (Pre-Installed)
 - Make sure you are using the university remote access VON if you are outside the unviersity network.
 [Remote Access Instructions](https://ucalgary.service-now.com/it?id=kb_article&sys_id=52a169d6dbe5bc506ad32637059619cd)
 - Connect to CPSC ARM server
 	- Hostname: **arm.cpsc.ucalgary.ca**
 	- Username: **Your_CPSC_Username**
 	- Password: **Your_CPSC_Password**
-	- On Windows: Open Putty > Enter Hostname: (john.sturgis@arm.cpsc.ucalgary.ca) > Open > Enter Password when prompted
+	
 
 ---
 ## 3. Intro to the linux shell and VIM

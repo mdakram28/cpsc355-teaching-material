@@ -1,6 +1,6 @@
 # Session 04: Control Flow in Assembly
 
-## Date: September 22:, 2022
+## Date: January 26, 2023
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
@@ -20,12 +20,17 @@
 	// This will tell the assembler to replace all x_r to x19
 	define(x_r, x19)
 	```
-- The commands `.macro` and `.endm` allow you to define macros that generate assembly output. For example, this definition specifies a macro sum that puts a sequence of numbers into memory:
-	```assembly
-        .macro  increment reg
-	add	\reg, \reg, 1
-        .endm
-	```
+Use the extention `.asm` for unprocessed code containing macros.
+
+### Invoking the preprocessor
+
+Run this command to process the .asm fle (containing macros) to `.s` processed file ready for compilation.
+
+```bash
+m4 code.asm > code.s
+```
+
+The `code.s` file will be created which can be compiled using gcc.
 
 ---
 ## 2. Branch Instruction and Condition Codes
@@ -120,10 +125,10 @@ Other branching instructions:
 	Equivalent Assembly Code:
 	
 	```assembly
-	define(a_r, x19)
-	define(b_r, x19)
-	define(c_r, x19)
-	define(d_r, x19)
+	define(a_r, w19)
+	define(b_r, w20)
+	define(c_r, w21)
+	define(d_r, w22)
 	
 		...
 		cmp		a_r, b_r	// test
