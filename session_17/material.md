@@ -1,6 +1,6 @@
 # Session 17: External Pointer Arrays
 
-## Date: November 15, 2022
+## Date: March 21, 2023
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
@@ -144,6 +144,7 @@ ldr     x21, [base_r, index_r, SXTW 3]
 Note: We are using SXTW 3 since size of items inside array is 8 (2^3)
 
 ## Data sections
+![Process sections](https://data-flair.training/blogs/wp-content/uploads/sites/2/2021/07/PROCESSES-IN-OS-Sections-of-a-process.jpg)
 
 1. **.text** section is read only pre-initialized memory. It stores read only strings and assembly code.
 2. **.data** section is read-write pre-initialized memory. It stores global variables. Data section should be doubleword aligned.
