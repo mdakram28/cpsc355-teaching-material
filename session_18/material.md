@@ -1,6 +1,6 @@
 # Session 18: Global Variables and Linking
 
-## Date: November 17, 2022
+## Date: March 28, 2022
 
 ## Email: mohdakram.ansari@ucalgary.ca
 
