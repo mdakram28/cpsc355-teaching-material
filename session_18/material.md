@@ -391,31 +391,31 @@ We can use makefile to automate the build process from inidividual source files 
 Example 3 : Simple Makefile
 ```make
 build:
-        # Create c_code.o
-        gcc -c c_code.c -o c_code.o
-        
-        # Create asm_code.o
-        m4 asm_code.asm > asm_code.s
-        gcc -c asm_code.s -o asm_code.o
+	# Create c_code.o
+	gcc -c c_code.c -o c_code.o
 
-        # c_code.o + asm_code.o --> build
-        gcc c_code.o asm_code.o -o build
+	# Create asm_code.o
+	m4 asm_code.asm > asm_code.s
+	gcc -c asm_code.s -o asm_code.o
+
+	# c_code.o + asm_code.o --> build
+	gcc c_code.o asm_code.o -o build
 ```
 
 Example 4 : Generic makefile
 ```make
 
 %.s: %.asm
-        m4 $< > $@
+	m4 $< > $@
 
 %.o: %.s
-        gcc -c $< -o $@
+	gcc -c $< -o $@
 
 %.o: %.c
-        gcc -c $< -o $@
+	gcc -c $< -o $@
 
 build:  c_code.o asm_code.o
-        gcc $^ -o $@
+	gcc $^ -o $@
 ```
 
 ### Exercise
